@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" /> 
+<meta content="Sou o Cara provides a way for you to search for usernames in social sites such as Twitter, Facebook, Delicious (De.li.ci.ous), Flickr (Photos), Meme (Yahoo!), FriendFeed, Digg, GitHub, Last.FM, YouTube (Videos), Blogger, MyBlogLog " name="description" />
+<title>Social Explorer</title>
+<link type="text/css" href="http://view.jquery.com/trunk/ui/themes/base/ui.core.css" rel="stylesheet" />
+<link type="text/css" href="http://view.jquery.com/trunk/ui/themes/base/ui.dialog.css" rel="stylesheet" />
+<link type="text/css" href="http://view.jquery.com/trunk/ui/themes/base/ui.theme.css" rel="stylesheet" />
+<link type="text/css" href="css/site.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/features.js"></script>
+<script type="text/javascript" src="js/slides.js"></script>
+<script language="javascript" type="text/javascript" src="js/util.js"></script>
+<script language="javascript" type="text/javascript" src="js/apiLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/socialLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/otherLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/searchLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/profileLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/postsLibrary.js"></script> 
+<script language="javascript" type="text/javascript" src="js/followersLibrary.js"></script>    
+<script language="javascript" type="text/javascript" src="js/friendsLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="js/favoritesLibrary.js"></script>
+</head>
+<body>
+ <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script><script type="text/javascript">FB.init("70005a12e6aefbf8b1e07c52e77c69c9");</script>
+ <a href="http://github.com/luciana" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub" /></a>
+<div id="bodywrapper"> 
+  <div id="bodycontent" class="clearfix">
+  	<div class="clearfix">		
+		<label for="txtUsername" id="lblUsername"><a href="index.html"><img src="images/logo.png" border="0"></a></label>	
+		<input id="txtUsername" name="username" title="Enter an username" value="" maxsize="20" type="text"/>
+		<input id="txtApi" name="apiName" type="hidden" />
+		<a class="button" onclick="this.blur();"> <span>Find</span></a> 		
+	</div><!-- end search -->	
+	<div class="clearfix"></div>		
+    <div id="nav" class="clearfix"> 	
+	  <div id="wrap"> 
+	  <!-- BEGIN box --> 		
+		<div class="box"> 
+		
+        <!-- Site Thumbnails -->
+         <div id="lvl-6" class="lvl">       
+            <div class="tn" id="a_twitter" title="Twitter" onclick="getProfile(this,'twitter');"> 
+              <dl id="b_twitter">
+                <dt><strong title="Twitter" id="s_twitter">Twitter</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_twitter.png" id="twitter" alt="Twitter" width="48" height="48" /> 
+                </dd>
+              </dl>
+              <span class="hide-me">http://twitter.com/</span> </div>
+		
+          <hr class="hide-me" />	          
+            <div class="tn" title="MyBloglog" id="a_mybloglog" onclick="getProfile(this,'mybloglog');"> 
+              <dl >
+                <dt id="b_mybloglog"><strong title="MyBlogLog" id="s_mybloglog">MyBlogLog</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_blogger.png" alt="MyBloglog" id="mybloglog" width="48" height="48" /> 
+                </dd>
+              </dl>
+              <span class="hide-me">http://mybloglog.com/</span> </div>
+      
+          <hr class="hide-me" />
+		    
+            <div class="tn" title="FriendFeed" id="a_friendfeed" onclick="getProfile(this,'friendfeed');"> 
+              <dl>
+                <dt id="b_friendfeed"> <strong title="FriendFeed" id="s_friendfeed">FriendFeed</strong> 
+                </dt>
+                <dd class="visits"> <img src="images/icon_bw_friendfeed.png" alt="FriendFeed" id="friendfeed" width="48" height="48" /> 
+                </dd>
+              </dl>
+              <span class="hide-me">http://friendfeed.com/</span> </div>
+			
+          <hr class="hide-me" />
+		 
+          
+            <div class="tn" title="Del.icio.us" id="a_delicious" onclick="getProfile(this,'delicious');"> 
+              <dl id="b_delicious">
+                <dt><strong title="Del.icio.us" id="s_delicious">Del.icio.us</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_delicious.png" alt="Del.icio.us" id="delicious" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://del.icio.us/</span> </div>
+			
+          <hr class="hide-me" />
+		 
+          
+            <div class="tn" title="Meme" id="a_meme" onclick="getProfile(this,'meme');"> 
+              <dl id="b_meme">
+                <dt><strong title="Meme"  id="s_meme">Meme</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_meme.png" alt="Meme" id="meme" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://meme.com/</span> </div>
+			
+			  <hr class="hide-me" />
+			
+          
+            <div class="tn" title="Flickr" id="a_flickr" onclick="getProfile(this,'flickr');"> 
+              <dl id="b_flickr">
+                <dt><strong title="Flickr" id="s_flickr">Flickr</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_flickr.png" alt="Flickr" id="flickr" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://Flickr.com/</span> </div>
+             
+		  <hr class="hide-me" />
+		  
+          
+            <div class="tn" title="GitHub" id="a_github" onclick="getProfile(this,'github');"> 
+              <dl id="b_github">
+                <dt><strong title="GitHub" id="s_github">GitHub</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_github.png" alt="GitHub" id="github" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://GitHub.com/</span> </div>
+			
+		  <hr class="hide-me" />
+		 
+          
+            <div class="tn" title="Facebook" id="a_facebook" onclick="getProfile(this,'facebook');"> 
+              <dl id="b_facebook">
+                <dt><strong title="Facebook" id="s_facebook">Facebook</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_facebook.png" alt="Facebook" id="facebook" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://facebook.com/</span> </div>
+			
+		  <hr class="hide-me" />
+		  
+          
+            <div class="tn" title="Last.fm" id="a_lastfm" onclick="getProfile(this,'lastfm');"> 
+              <dl id="b_lastfm">
+                <dt><strong title="Last.fm" id="s_lastfm">Last.fm</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_lastfm.png" alt="Last.fm" id="lastfm" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://last.fm/</span> </div>
+			
+		  <hr class="hide-me" />
+		 
+            <div class="tn" title="Blogger" id="a_blogger" onclick="getProfile(this,'blogger');"> 
+              <dl id="b_flickr">
+                <dt><strong title="Blogger" id="s_blogger">Blogger</strong></dt>
+                <dd class="visits"> <img src="images/icon_bw_blogger.png" alt="Blogger" id="blogger" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://blogger.com/</span> </div>
+			
+          <hr class="hide-me" />
+		   
+          
+            <div class="tn" title="You Tube" id="a_youtube" onclick="getProfile(this,'youtube');"> 
+              <dl id="b_youtube">
+                <dt><strong title="YouTube" id="s_youtube">You Tube</strong></dt>
+                <dd class="visits"><img src="images/icon_bw_youtube.png" alt="You Tube" id="youtube" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://youtube.com/</span> </div>
+			
+          <hr class="hide-me" />
+		 
+          
+            <div class="tn" title="Tumblr" id="a_tumblr" onclick="getProfile(this,'tumblr');"> 
+              <dl>
+                <dt><strong title="Tumblr" id="s_tumblr">Tumblr</strong></dt>
+                <dd class="visits"><img src="images/icon_bw_tumblr.png" alt="Tumblr" id="tumblr" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://tumblr.com/</span> </div>
+			
+          <hr class="hide-me" />
+         
+		  
+            <div class="tn" title="Hi5" id="a_hi5" onclick="getProfile(this,'hi5');"> 
+              <dl id="b_hi5">
+                <dt><strong title="Hi5" id="s_hi5"> Hi5</strong></dt>
+                <dd class="visits"><img src="images/icon_bw_hi5.png" alt="Hi5" id="hi5" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://hi5.com/</span></div>
+			
+          <hr class="hide-me" />
+         
+            <div class="tn" title="Digg" id="a_digg" onclick="getProfile(this,'digg');"> 
+              <dl id="b_digg">
+                <dt><strong title="Digg" id="s_digg">Digg</strong></dt>
+                <dd class="visits1"><img src="images/icon_bw_digg.png" alt="Digg" id="digg" width="48" height="48" /></dd>
+              </dl>
+              <span class="hide-me">http://Digg.com/</span> </div>
+         
+		 <hr class="hide-me" />		
+        </div>     
+		
+		</div> <!-- END BOX --> 
+      </div><!-- WRAP END -->
+    </div>
+    <!--end nav--> 
+	<div style="clear:both"></div>
+	<div id="api">														        
+      <div id="content"> 
+        <h1 id="profileName"></h1>        
+          <ul id="screenshots" class="screenshots">
+            <li id="screenshot_1_1_full"> 
+				<div id="buttons"> <a href="#" id="prev">prev</a> <a href="#" id="next">next</a></div>
+		        <div class="clean"></div>
+        		<div id="slides"> 	
+              		<div id="posts"></div>
+			   </div><!-- end slides-->
+            </li>           
+       	</ul>
+        <a class="close" id="screenshots_1_closer" href="#">Close</a> 
+        <div id="profile"></div>
+      </div>
+<!-- end content-->
+	</div><!--end api-->  			
+  </div> <!-- end body content-->
+   <div class="clearfix"><br></div>
+   <div id="repost-buttons"> 
+      <div class="sociable">        
+        <ul>
+          <li class="sociablefirst">
+		  	<a href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fsouocara.com&amp;title=&amp;bodytext=bodytest" title="Digg"  target="_blank" id="digg" rel="nofollow">
+			<img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="Digg" alt="Digg" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-235px -1px" class="sociable-hovers" /			>
+			</a>
+			</li>
+          <li>
+		  <a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fsouocara.com&amp;title=bookmarktitlec" title="StumbleUpon"  target="_blank" id="stumbleupon" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="StumbleUpon" alt="StumbleUpon" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-217px -55px" class="sociable-hovers" /></a></li>
+          <li>
+		  <a href="http://delicious.com/post?url=http%3A%2F%2Fsouocara.com&amp;title=bookmarktitle&amp;notes=bodytest" title="del.icio.us"  target="_blank" id="del.icio.us" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="del.icio.us" alt="del.icio.us" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-199px -1px" class="sociable-hovers" /></a></li>
+          <li>
+		  <a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fsouocara.com&amp;t=bookmarktitle" title="Facebook"  target="_blank" id="facebook" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="Facebook" alt="Facebook" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+          <li>
+		  <a href="http://www.printfriendly.com/print?url=http%3A%2F%2Fsouocara.com&amp;partner=sociable" title="Print"  target="_blank" id="print" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="Print" alt="Print" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-343px -37px" class="sociable-hovers" /></a></li>
+          <li>
+		  <a href="mailto:?subject=bookmarktitle&amp;body=http%3A%2F%2Fsouocara.com" title="email"  target="_blank" id="email" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="email" alt="email" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-325px -1px" class="sociable-hovers" /></a></li>
+          <li>
+		  <a href="http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=http%3A%2F%2Fsouocara.com&amp;title=bookmarktitle" title="blogmarks"  target="_blank" id="blogmarks" rel="nofollow">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="blogmarks" alt="blogmarks" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-73px -1px" class="sociable-hovers" /></a></li>
+         <li>
+		  <a rel="nofollow" id="bk_twitter"  target="_blank" href="http://twitter.com/home?status=bookmarktitle%20-%20http%3A%2F%2Fsouocara.com" title="Twitter">
+		  <img src="http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.gif" title="Twitter" alt="Twitter" style="width: 16px; height: 16px; background: transparent url(http://www.graphicdesignblog.org/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
+           </ul>
+      </div>
+      <!-- end sociable-->
+    </div>
+    <!-- end report-buttons-->
+    <div class="footertext"> 
+	<!-- ad -->
+	<script type="text/javascript"><!--
+google_ad_client = "pub-1205277005732984";
+/* 468x60, created 6/13/10 */
+google_ad_slot = "5954202772";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>Version 0.1. Enjoy social focus. This site is open 
+      source, so feel free to contribute!
+    <!-- end footertext-->
+  </div>
+</div>
+<!-- end bodywrapper -->	
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16923942-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
